@@ -19,7 +19,7 @@ def new_user():
 
 @app.route('/user/create', methods=['POST'])
 def create():
-    print(request.form,"request.form")
+    # print(request.form,"request.form")
     User.save(request.form)
     return redirect('/users')
 
@@ -28,21 +28,21 @@ def create():
 @app.route('/user/edit/<int:id>')
 def edit(id):
     data = {
-        "id":id
+        'id':id
     }
     return render_template('edit_user.html', title='edit', user=User.get_one(data))
 
 @app.route('/user/print/<int:id>')
 def print(id):
     data= {
-        "id":id
+        'id':id
     }
     return render_template("print_user.html", title='print', user=User.get_one(data))
 
 @app.route('/user/update', methods=['POST'])
 def update():
     User.update(request.form)
-    return redirect('/users',  title='update')
+    return redirect('/users')
 
 @app.route('/user/delete/<int:id>')
 def delete(id):
@@ -50,8 +50,7 @@ def delete(id):
         'id': id
     }
     User.delete(data)
-    return redirect('/users', title='delete')
-
+    return redirect('/users')
 
 if __name__=="__main__":   
     app.run(debug=True)    

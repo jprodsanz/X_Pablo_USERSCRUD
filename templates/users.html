@@ -21,9 +21,9 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.created_at }}</td>
                 <td>
-                    <a href="/user/print/ {{ user.id }} ">Show</a>
-                    <a href="/user/edit/ {{ user.id }} ">Edit</a>
-                    <a href="/user/delete/ {{ user.id }} ">Delete </a>
+                    <a href="/user/print/{{ user.id }} ">Show</a>
+                    <a href="/user/edit/{{ user.id }} ">Edit</a>
+                    <a href="/user/delete/{{ user.id }} ">Delete </a>
                 </td>
         {% endfor %}
         </tbody>

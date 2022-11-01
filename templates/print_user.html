@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="card text-center text-center">
-        <div class="card-header">User Info </div>
-        <div class="card-body">
-            <h5 class="card-title">User {{user.id}}</h5>
-            <p class="card-text">Name {{user.name}}</p>
-            <p class="card-text">Email {{user.email}}</p>
-        </div>
-        <div class="card-footer text-muted">
-        <p>Created ON: {{user.created_at.strftime("%b %d %Y")}}</p>
-        <p>Last Updated: {{ user.updated_at.strftime("%b %d %Y")}}</p>
-        </div>
-</div>
+    <div class="card text-center text-center">
+            <div class="card-header">User Info </div>
+            <div class="card-body">
+                <h5 class="card-title">I am user {{user.id}}</h5>
+                <p class="card-text">{{user.first_name}} {{user.last_name}}</p>
+                <p class="card-text">{{user.email}}</p>
+            </div>
+            <div class="card-footer text-muted">
+            <p>Created ON: {{user.created_at.strftime("%b %d %Y")}}</p>
+            <p>Last Updated: {{ user.updated_at.strftime("%b %d %Y")}}</p>
+            </div>
+    </div>
 {% endblock content %}
